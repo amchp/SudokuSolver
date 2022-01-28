@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc9f7915-06eb-4fe3-b9db-60be290b3bd4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZxnUGaCPokrAyeWotNvRfq1FmF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Sudoko" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Sudoko" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc9f7915-06eb-4fe3-b9db-60be290b3bd4" name="Default Changelist" comment="" />
+      <created>1585789626619</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585789626619</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="147" y="23" width="1071" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585790429365">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state x="147" y="23" width="1071" height="704" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1366.704@0.23.1366.704" timestamp="1585790429365" />
+    <state width="662" height="160" key="GridCell.Tab.0.bottom" timestamp="1585934225849">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="160" key="GridCell.Tab.0.bottom/0.23.1366.704@0.23.1366.704" timestamp="1585934225849" />
+    <state width="662" height="160" key="GridCell.Tab.0.center" timestamp="1585934225848">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="160" key="GridCell.Tab.0.center/0.23.1366.704@0.23.1366.704" timestamp="1585934225848" />
+    <state width="662" height="160" key="GridCell.Tab.0.left" timestamp="1585934225848">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="160" key="GridCell.Tab.0.left/0.23.1366.704@0.23.1366.704" timestamp="1585934225848" />
+    <state width="662" height="160" key="GridCell.Tab.0.right" timestamp="1585934225849">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="160" key="GridCell.Tab.0.right/0.23.1366.704@0.23.1366.704" timestamp="1585934225849" />
+    <state width="662" height="200" key="GridCell.Tab.1.bottom" timestamp="1585889949841">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="200" key="GridCell.Tab.1.bottom/0.23.1366.704@0.23.1366.704" timestamp="1585889949841" />
+    <state width="662" height="200" key="GridCell.Tab.1.center" timestamp="1585889949840">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="200" key="GridCell.Tab.1.center/0.23.1366.704@0.23.1366.704" timestamp="1585889949840" />
+    <state width="662" height="200" key="GridCell.Tab.1.left" timestamp="1585889949839">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="200" key="GridCell.Tab.1.left/0.23.1366.704@0.23.1366.704" timestamp="1585889949839" />
+    <state width="662" height="200" key="GridCell.Tab.1.right" timestamp="1585889949840">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state width="662" height="200" key="GridCell.Tab.1.right/0.23.1366.704@0.23.1366.704" timestamp="1585889949840" />
+    <state x="192" y="23" width="982" height="704" key="SettingsEditor" timestamp="1585789681611">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state x="192" y="23" width="982" height="704" key="SettingsEditor/0.23.1366.704@0.23.1366.704" timestamp="1585789681611" />
+    <state x="362" y="207" key="com.intellij.ide.util.TipDialog" timestamp="1585951625429">
+      <screen x="0" y="23" width="1366" height="704" />
+    </state>
+    <state x="362" y="207" key="com.intellij.ide.util.TipDialog/0.23.1366.704@0.23.1366.704" timestamp="1585951625429" />
+  </component>
+</project>
