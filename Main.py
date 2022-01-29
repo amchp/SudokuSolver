@@ -1,5 +1,3 @@
-from Sudoko import Sudoko
-
 import tkinter as tk
 
 from typing import List
