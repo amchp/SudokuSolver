@@ -58,6 +58,7 @@ class Main(tk.Frame):
         self.selectedI = -1
         self.selectedJ = -1
         self.board = []
+        self.solving = False
         for i in range(9):
             self.board.append([0] * 9)
         self.drawBoard()
@@ -86,14 +87,15 @@ class Main(tk.Frame):
             for col in range(0, 9):
                 self.initial_board[row][col] = self.board[row][col]
         result = self.solve_sudoku()
+        print(result)
         if result:
             pass
         else:
             for row in range(0,9):
                 for col in range(0, 9):
                     self.board[row][col] = self.initial_board[row][col]
-        self.drawBoard()
-            
+        self.solving = False
+        self.mainloop()
 
     def solve_sudoku(self):
         l: List[int] = [0, 0]
@@ -103,12 +105,13 @@ class Main(tk.Frame):
         col = l[1]
         # consider digits 1 to 9
         for num in range(1, 10):
-
             # if looks promising
             if check_location_is_safe(self.board, row, col, num):
                 # make tentative assignment
                 self.board[row][col] = num
                 # return, if success, ya!
+                self.drawBoard()
+                self.canvas.update()
                 if self.solve_sudoku():
                     return True
 
@@ -118,14 +121,16 @@ class Main(tk.Frame):
         return False
 
     def click(self, event):
+        if self.solving:
+            return
         self.mouseX, self.mouseY = event.x, event.y
         Pass = False 
         for i in range(9):
             for j in range(9):
                 if(self.mouseX > 5 + 50*i and
-                   self.mouseX < 5 + 50*(i) + 55 and
-                   self.mouseY > 5 + 50*j and
-                   self.mouseY < 5 + 50*j + 55):
+                    self.mouseX < 5 + 50*(i) + 55 and
+                    self.mouseY > 5 + 50*j and
+                    self.mouseY < 5 + 50*j + 55):
                     self.selectedI = i
                     self.selectedJ = j
                     Pass = True
@@ -135,13 +140,17 @@ class Main(tk.Frame):
         self.drawBoard()
 
     def onKeyPress(self, event):
+        if self.solving:
+            return
         i = self.selectedI
         j = self.selectedJ
         if(event.char.isdigit() and 
-           i != -1 and
-           j!= -1):
+            i != -1 and
+            j!= -1):
             self.board[i][j] = int(event.char)
         elif(event.char == " "):
+            self.master.quit()
+            self.solving = True
             self.solve()
         if(event.keysym == "BackSpace"):
             self.board = []

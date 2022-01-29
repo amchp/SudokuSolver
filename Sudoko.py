@@ -51,6 +51,8 @@ class Sudoko:
         self.solution = [[0]*9  for i in range(9)]
         for row in range(0,9):
             for col in range(0, 9):
+                if not self.check_location_is_safe(self.board, row, col, arr[row][col]):
+                    return False
                 self.board[row][col] = arr[row][col]
                 self.solution[row][col] = arr[row][col]
         self.solve_sudoku()
