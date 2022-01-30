@@ -89,7 +89,6 @@ class Main(tk.Frame):
                 for col in range(0, 9):
                     self.board[row][col] = self.initial_board[row][col]
         self.solving = False
-        self.mainloop()
 
     def solve_sudoku(self):
         l: List[int] = [0, 0]
@@ -135,7 +134,6 @@ class Main(tk.Frame):
         self.drawBoard()
 
     def onKeyPress(self, event):
-        print(event)
         if self.solving:
             return
         i = self.selectedI
