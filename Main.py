@@ -1,9 +1,5 @@
 import tkinter as tk
-
 from typing import List
-	
-import time
-
 # Returns a boolean which indicates whether any assigned entry
 # in the specified row matches the given number.
 def used_in_row(arr, row, num):
@@ -108,8 +104,9 @@ class Main(tk.Frame):
                 # make tentative assignment
                 self.board[row][col] = num
                 # return, if success, ya!
-                self.drawBoard()
-                self.canvas.update()
+                if self.solving:
+                    self.drawBoard()
+                    self.canvas.update()
                 if self.solve_sudoku():
                     return True
 
@@ -138,6 +135,7 @@ class Main(tk.Frame):
         self.drawBoard()
 
     def onKeyPress(self, event):
+        print(event)
         if self.solving:
             return
         i = self.selectedI
@@ -150,15 +148,21 @@ class Main(tk.Frame):
             self.master.quit()
             self.solving = True
             self.solve()
-        if(event.keysym == "BackSpace"):
-            self.board = []
-            for i in range(9):
-                self.board.append([0] * 9)
+        elif(event.keysym == "Return"):
+            self.solve()
+        elif(event.keysym == "BackSpace"):
+            if i == -1 and j == -1:
+                self.board = []
+                for i in range(9):
+                    self.board.append([0] * 9)
+            else:
+                self.board[i][j] = 0
         self.drawBoard()
         
 
 def main():
     root = tk.Tk()
+    root.title("Sudoku Solver")
     app = Main(master=root)
     root.bind('<ButtonRelease-1>', app.click)
     root.bind('<KeyPress>', app.onKeyPress)
