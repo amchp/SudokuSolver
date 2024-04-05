@@ -1,5 +1,7 @@
 import tkinter as tk
 from typing import List
+
+
 # Returns a boolean which indicates whether any assigned entry
 # in the specified row matches the given number.
 def used_in_row(arr, row, num):
@@ -41,7 +43,11 @@ def find_empty_location(arr, l):
 def check_location_is_safe(arr, row, col, num):
     # Check if 'num' is not already placed in current row,
     # current column and current 3x3 box
-    return not used_in_row(arr, row, num) and not used_in_col(arr, col, num) and not used_in_box(arr, row - row % 3,col - col % 3, num)
+    return (
+        not used_in_row(arr, row, num)
+        and not used_in_col(arr, col, num)
+        and not used_in_box(arr, row - row % 3,col - col % 3, num)
+    )
 
 
 class Main(tk.Frame):
@@ -58,35 +64,83 @@ class Main(tk.Frame):
         self.drawBoard()
 
     def drawBoard(self):
-        self.canvas.create_rectangle(5,5,455,455, width="4")
-        for i in range(0,9):
-            for j in range(0,9):
+        self.canvas.create_rectangle(
+            5,
+            5,
+            455,
+            455,
+            width=4,
+            fill="#FFFFFF",
+            outline="#000000"
+        )
+        for i in range(9):
+            for j in range(9):
                 filler = "#FFFFFF"
-                if(self.selectedI == i and self.selectedJ == j):
+                if self.selectedI == i and self.selectedJ == j:
                     filler = "#AAFFAA"
-                self.canvas.create_rectangle(i*50+5, j*50+5, i*50+55, j*50+55, fill=filler)
+                self.canvas.create_rectangle(
+                    i*50+5,
+                    j*50+5,
+                    i*50+55,
+                    j*50+55,
+                    fill=filler,
+                    outline="#000000",
+                    width=1
+                )
                 if self.board[i][j] != 0:
-                    self.canvas.create_text(i*50+30, j*50+30, font="Times 32", text=self.board[i][j], fill="#000000")
-        self.canvas.create_line(155,0,155,455, width="4")
-        self.canvas.create_line(305,0,305,455, width="4")
-        self.canvas.create_line(0,155,455,155, width="4")
-        self.canvas.create_line(0,305,455,305, width="4")
-        
+                    self.canvas.create_text(
+                        i*50+30,
+                        j*50+30,
+                        font="Times 32",
+                        text=self.board[i][j],
+                        fill="#000000"
+                    )
+        self.canvas.create_line(
+            155,
+            0,
+            155,
+            455,
+            width=4,
+            fill="#000000"
+        )
+        self.canvas.create_line(
+            305,
+            0,
+            305,
+            455,
+            width=4,
+            fill="#000000"
+        )
+        self.canvas.create_line(
+            0,
+            155,
+            455,
+            155,
+            width=4,
+            fill="#000000"
+        )
+        self.canvas.create_line(
+            0,
+            305,
+            455,
+            305,
+            width=4,
+            fill="#000000"
+        )
 
     def solve(self):
         self.selectedI = -1
         self.selectedJ = -1
-        self.initial_board = [[0]*9  for i in range(9)]
-        for row in range(0,9):
-            for col in range(0, 9):
+        self.initial_board = [[0]*9 for _ in range(9)]
+        for row in range(9):
+            for col in range(9):
                 self.initial_board[row][col] = self.board[row][col]
         result = self.solve_sudoku()
-        print(result)
         if result:
             pass
         else:
-            for row in range(0,9):
-                for col in range(0, 9):
+            for row in range(9):
+                for col in range(9):
                     self.board[row][col] = self.initial_board[row][col]
         self.solving = False
         self.mainloop()
@@ -119,38 +173,41 @@ class Main(tk.Frame):
         if self.solving:
             return
         self.mouseX, self.mouseY = event.x, event.y
-        Pass = False 
+        selected = False
         for i in range(9):
             for j in range(9):
-                if(self.mouseX > 5 + 50*i and
+                if (
+                    self.mouseX > 5 + 50*i and
                     self.mouseX < 5 + 50*(i) + 55 and
                     self.mouseY > 5 + 50*j and
-                    self.mouseY < 5 + 50*j + 55):
+                    self.mouseY < 5 + 50*j + 55
+                ):
                     self.selectedI = i
                     self.selectedJ = j
-                    Pass = True
-        if not Pass:
+                    selected = True
+        if not selected:
             self.selectedI = -1
             self.selectedJ = -1
         self.drawBoard()
 
     def onKeyPress(self, event):
-        print(event)
         if self.solving:
             return
         i = self.selectedI
         j = self.selectedJ
-        if(event.char.isdigit() and 
-            i != -1 and
-            j!= -1):
+        if (
+            event.char.isdigit()
+            and i != -1 and
+            j != -1
+        ):
             self.board[i][j] = int(event.char)
-        elif(event.char == " "):
+        elif event.char == " ":
             self.master.quit()
             self.solving = True
             self.solve()
-        elif(event.keysym == "Return"):
+        elif event.keysym == "Return":
             self.solve()
-        elif(event.keysym == "BackSpace"):
+        elif event.keysym == "BackSpace":
             if i == -1 and j == -1:
                 self.board = []
                 for i in range(9):
@@ -158,7 +215,7 @@ class Main(tk.Frame):
             else:
                 self.board[i][j] = 0
         self.drawBoard()
-        
+
 
 def main():
     root = tk.Tk()
@@ -167,6 +224,7 @@ def main():
     root.bind('<ButtonRelease-1>', app.click)
     root.bind('<KeyPress>', app.onKeyPress)
     app.mainloop()
+
 
 if __name__ == "__main__":
     main()
