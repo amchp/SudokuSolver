@@ -58,19 +58,19 @@ class Main(tk.Frame):
         self.drawBoard()
 
     def drawBoard(self):
-        self.canvas.create_rectangle(5,5,455,455, width="4")
+        self.canvas.create_rectangle(5,5,455,455, width="4", fill="#000000")
         for i in range(0,9):
             for j in range(0,9):
                 filler = "#FFFFFF"
                 if(self.selectedI == i and self.selectedJ == j):
                     filler = "#AAFFAA"
-                self.canvas.create_rectangle(i*50+5, j*50+5, i*50+55, j*50+55, fill=filler)
+                self.canvas.create_rectangle(i*50+5, j*50+5, i*50+55, j*50+55, fill=filler, outline='#000000')
                 if self.board[i][j] != 0:
                     self.canvas.create_text(i*50+30, j*50+30, font="Times 32", text=self.board[i][j], fill="#000000")
-        self.canvas.create_line(155,0,155,455, width="4")
-        self.canvas.create_line(305,0,305,455, width="4")
-        self.canvas.create_line(0,155,455,155, width="4")
-        self.canvas.create_line(0,305,455,305, width="4")
+        self.canvas.create_line(155,0,155,455, width="4", fill="#000000")
+        self.canvas.create_line(305,0,305,455, width="4", fill="#000000")
+        self.canvas.create_line(0,155,455,155, width="4", fill="#000000")
+        self.canvas.create_line(0,305,455,305, width="4", fill="#000000")
         
 
     def solve(self):
